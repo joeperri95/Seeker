@@ -1,0 +1,23 @@
+
+
+.posting-entry{
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: black;
+	margin: 5px;
+	text-align: center;
+	width: 50%;
+}
+
+.posting-title{
+	border-width: 0px;
+	padding: 0px;
+	margin: 2px;
+}
+
+p{
+	border-width: 0px;
+	padding: 0px;
+	margin: 2px;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>this is another title</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="../static/js/seeker.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+</head>
+
+<body>
+	<h1>This is a test</h1>
+	<h2>Number of Postings: {{ b.max }}</h2>
+	{% for file in files %}
+	<div class="posting-entry">
+		<div class = "posting-header"> 
+			<a href="https://www.indeed.com/{{ file.link }}"><h5 class = "posting-title">{{ file.title }}</h5></a>
+			<h5 class = "posting-company">{{ file.company }}</h5> 
+		</div>
+		<p>{{ file.description }}</p>
+		<table>
+			<tr> 
+				<td><button>1</button></td>
+				<td><button>2</button></td>
+				<td><button>3</button></td>
+				<td><button>4</button></td>
+				<td><button>5</button></td> 
+			</tr>
+		</table>
+	</div>
+	{% endfor %}
+
+	<form action="/results/{{ b.next }}" method="post"> 
+		<button type="submit" id = "Load More">Load More records</button>
+	</form>
+	<a href="/"><button>Reset</button></a>
+	<form action="/scan" method="post">
+		<button type="submit">Scan</button>
+	</form>
+</body>
+
+</html>
